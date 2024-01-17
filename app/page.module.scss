@@ -233,7 +233,7 @@
       & .mv_nav {
         margin: 0 calc(50% - 50vw) 120px;
         width: 100vw;
-        height: 80px;
+        height: 60px;
 
         & .mv_wallet {
           color: var(--font-color-gray);
@@ -339,10 +339,10 @@
             }
 
             & svg {
-              width: 14rem;
+              width: 10rem;
               color: var(--font-color-gray);
               margin-top: 20px;
-              margin-bottom: 50px;
+              margin-bottom: 70px;
             }
           }
         }

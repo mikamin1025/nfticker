@@ -41,7 +41,7 @@ export default function Home() {
         <h2 className={styles.section_title}>SURVICE</h2>
         <div className={styles.section_detail}>
           <p className={styles.section_detail_text}>
-            あなたが所有する「NFT」を「ステッカー」にするサービスです。
+            あなたが所有している「NFT」を「ステッカー（シール）」にするサービスです。
           </p>
         </div>
       </div>

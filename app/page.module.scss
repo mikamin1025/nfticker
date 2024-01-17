@@ -35,7 +35,7 @@
         font-size: var(--font-size-L);
         font-weight: bold;
         color: var(--foreground-accent-rgb);
-
+        font-family: var(--font-title);
       }
 
       & .mv_subtitle {
@@ -79,6 +79,7 @@
 
     & .section_title {
       font-size: var(--font-size-M);
+      font-family: var(--font-title);
       font-weight: bold;
     }
 
@@ -253,6 +254,7 @@
       & .mv_title {
         & .mv_maintitle {
           font-size: var(--sp-font-size-L);
+          font-family: var(--font-title);
           font-weight: bold;
           color: var(--foreground-accent-rgb);
           margin-top: 10px;
@@ -302,11 +304,13 @@
 
       & .section_title {
         font-size: var(--sp-font-size-ML);
+        font-family: var(--font-title);
         font-weight: bold;
       }
 
       & .section_detail {
         & .section_detail_text {
+          font-family: var(--font-accent);
           font-size: var(--sp-font-size-S);
           margin-top: 20px;
         }

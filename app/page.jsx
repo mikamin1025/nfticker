@@ -33,7 +33,7 @@ export default function Home() {
             あなたの所有するNFTを「ステッカー」にして現実世界でアピールしよう！
           </p>
         </div>
-        <a className={styles.button_connectwallet} href="">
+        <a className={styles.button_connectwallet} href="./order">
           Connect Wallet
         </a>
       </div>

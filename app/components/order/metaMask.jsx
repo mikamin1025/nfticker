@@ -1,3 +1,5 @@
+"use client";
+
 import styles from "./metaMask.module.scss";
 import { useState, useEffect } from "react";
 import detectEthereumProvider from "@metamask/detect-provider";

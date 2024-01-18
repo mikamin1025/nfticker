@@ -1,12 +1,59 @@
 .order_page {
-  width: 100%;
-  margin: 0 auto;
+  width: 90%;
+  max-width: 90vw;
+  margin: auto;
   text-align: center;
-  
 
-  & .order_nftcard {
-    width: 100%;
-    
-    
+  & .order_page_header {
+    // background-color: blue;
   }
+
+  & .order_page_body {
+    width: 100%;
+
+    & .icon_cart {
+      position: fixed;
+      top: 40px;
+      right: 40px;
+
+      & .icon_cart_inner {
+        position: relative;
+
+        & svg {
+          width: 30px;
+          color: var(--font-color-base);
+        }
+
+        & span {
+          display: flex;
+          width: 30px;
+          height: 30px;
+          background-color: red;
+          justify-content: center;
+          align-items: center;
+          color: var(--font-color-base);
+          border-radius: 50%;
+          position: absolute;
+          top: 50%;
+          right: -20px;
+        }
+      }
+    }
+
+    & .ListProduct {
+      width: 100%;
+      & .order_nftcard {
+        display: grid;
+        grid-template-columns: repeat(4, 1fr);
+        gap: 20px;
+        // filter: drop-shadow(0 50px 20px #0009)
+      }
+    }
+  }
+
+
+
+
+
+
 }

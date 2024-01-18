@@ -1,9 +1,26 @@
 .card_block {
   width: 90%;
   margin: 0 auto;
+  padding: 20px;
   overflow: hidden;
+  background-color: #111;
+  border-radius: 20px;
 
   & .card_img {
     width: 100%;
+    border-radius: 10px;
+  }
+  & .card_detail {
+    & .card_title {
+      color: var(--font-color-base);
+      font-size: var(--font-size-XS);
+      font-weight: 400;
+      margin: 5px auto;
+    }
+    // & .card_description {
+    //   color: var(--font-color-base);
+    //   font-size: var(--font-size-XS);
+    //   font-weight: 200;
+    // }
   }
 }

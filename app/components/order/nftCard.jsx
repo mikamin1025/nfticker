@@ -1,3 +1,5 @@
+"use client";
+
 import styles from "./nftCard.module.scss";
 
 export const NFTCard = ({ nft }) => {

@@ -30,6 +30,11 @@ export default function Home() {
     }
   };
 
+  useEffect(() => {
+    // このブロック内のコードはクライアントサイドでのみ実行されます。
+    // クライアントサイド固有のロジックをここに配置できます。
+  }, []); // 空の依存配列は、この useEffect がマウント後に一度だけ実行されることを保証します（componentDidMount に相当）
+
   return (
     <div className={styles.order_page}>
       <div className={styles.order_page_header}>

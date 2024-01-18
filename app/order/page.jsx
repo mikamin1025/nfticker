@@ -1,6 +1,6 @@
 "use client";
 
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import { NFTCard } from "../components/order/nftCard";
 import { MetaMask } from "../components/order/metaMask";
 import "../globals.css";
@@ -38,7 +38,7 @@ export default function Home() {
   return (
     <div className={styles.order_page}>
       <div className={styles.order_page_header}>
-        <MetaMask setWalletAddress={setWalletAddress} />
+        {/* <MetaMask setWalletAddress={setWalletAddress} /> */}
         <input
           onChange={(e) => {
             setWalletAddress(e.target.value);

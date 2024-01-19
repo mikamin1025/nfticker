@@ -11,7 +11,7 @@ export const NFTCard = ({ nft }) => {
         {/* <p className="">{nft.contract.address}</p> */}
         {/* <p className={styles.card_description}>{nft.description}</p> */}
         <button className={styles.addCart}>
-          Add To Cart
+          カートに追加
         </button>
       </div>
     </div>

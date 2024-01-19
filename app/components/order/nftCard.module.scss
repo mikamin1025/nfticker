@@ -17,10 +17,14 @@
       font-weight: 400;
       margin: 5px auto;
     }
-    // & .card_description {
-    //   color: var(--font-color-base);
-    //   font-size: var(--font-size-XS);
-    //   font-weight: 200;
-    // }
+    & .addCart {
+      background-color: #353432;
+      color: var(--font-color-base);
+      padding: 5px 10px;
+      border-radius: 20px;
+      margin-top: 10px;
+      border: none;
+      cursor: pointer;
+    }
   }
 }

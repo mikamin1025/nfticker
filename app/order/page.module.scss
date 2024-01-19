@@ -11,6 +11,7 @@
   & .order_page_body {
     width: 100%;
 
+    // カートアイコン
     & .icon_cart {
       position: fixed;
       top: 40px;
@@ -40,8 +41,10 @@
       }
     }
 
+    // NFTの画像表示（商品一覧）
     & .ListProduct {
       width: 100%;
+
       & .order_nftcard {
         display: grid;
         grid-template-columns: repeat(4, 1fr);
@@ -49,11 +52,92 @@
         // filter: drop-shadow(0 50px 20px #0009)
       }
     }
+
+    // カート内容
+    & .cartTab {
+      width: 400px;
+      background-color: #353432;
+      color: var(--font-color-base);
+      position: fixed;
+      inset: 0 -400px 0 auto;
+      display: grid;
+      grid-template-rows: 70px 1fr 70px;
+
+      & h1 {
+        padding: 20px;
+        margin: 0;
+        font-weight: 300;
+      }
+
+      & .listCart {
+        overflow: auto;
+
+        &::-webkit-scrollbar {
+          width: 0;
+        }
+
+        & .item {
+          display: grid;
+          grid-template-columns: 70px 150px 50px 1fr;
+          gap: 10px;
+          text-align: center;
+          align-items: center;
+
+          &:nth-child(even) {
+            background-color: #eee1;
+          }
+
+          & img {
+            width: 100%;
+          }
+
+          & .quantity {
+            & span {
+              display: inline-block;
+              width: 25px;
+              height: 25px;
+              background-color: var(--font-color-base);
+              color: #353432;
+              border-radius: 50%;
+              cursor: pointer;
+              text-align: center;
+              line-height: 25px;
+
+              &:nth-child(2) {
+                background-color: transparent;
+                color: var(--font-color-base);
+              }
+            }
+          }
+
+        }
+      }
+
+      & .btn {
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+
+        & button {
+          background-color: #E8BC0E;
+          border: none;
+          font-family: Poppins;
+          font-weight: 500;
+          cursor: pointer;
+        }
+
+        & .close {
+          background-color: #eee;
+        }
+      }
+    }
   }
+}
 
+.showCart {
+  & .order_page {
+    & .cartTab {
+      inset: 0 0 0 auto;
+    }
 
-
-
-
-
+  }
 }

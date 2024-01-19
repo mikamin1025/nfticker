@@ -103,9 +103,9 @@ export const MetaMask = (props) => {
       <div>Injected Provider {hasProvider ? "DOES" : "DOES NOT"} Exist</div>
       {/* {window.ethereum?.isMetaMask && */}
       {wallet.accounts.length < 1 /* Updated */ ? (
-        <button onClick={handleConnect}>Connect MetaMask</button>
+        <button onClick={handleConnect}>MetaMaskに接続</button>
       ) : (
-        <button onClick={handleRevoke}>Revoke MetaMask</button>
+        <button onClick={handleRevoke}>MetaMaskの接続を解除</button>
       )}
 
       {wallet.accounts.length > 0 /* New */ ? (

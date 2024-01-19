@@ -1,6 +1,6 @@
 "use client";
 
-import { useState, useEffect } from "react";
+import { useState } from "react";
 import { NFTCard } from "../components/order/nftCard";
 import { MetaMask } from "../components/order/metaMask";
 import "../globals.css";
@@ -30,15 +30,10 @@ export default function Home() {
     }
   };
 
-  useEffect(() => {
-    // このブロック内のコードはクライアントサイドでのみ実行されます。
-    // クライアントサイド固有のロジックをここに配置できます。
-  }, []); // 空の依存配列は、この useEffect がマウント後に一度だけ実行されることを保証します（componentDidMount に相当）
-
   return (
     <div className={styles.order_page}>
       <div className={styles.order_page_header}>
-        {/* <MetaMask setWalletAddress={setWalletAddress} /> */}
+        <MetaMask setWalletAddress={setWalletAddress} />
         <input
           onChange={(e) => {
             setWalletAddress(e.target.value);

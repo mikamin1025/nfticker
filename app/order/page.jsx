@@ -1,6 +1,6 @@
 "use client";
 
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import { NFTCard } from "../components/order/nftCard";
 import { MetaMask } from "../components/order/metaMask";
 import "../globals.css";
@@ -9,7 +9,14 @@ import styles from "./page.module.scss";
 export default function Home() {
   const [wallet, setWalletAddress] = useState("");
   const [NFTs, setNFTs] = useState([]);
+  const [isOpen, setIsOpen] = useState(false);
 
+  //カートの中身表示
+  const cartClick = () => {
+    setIsOpen((prev) => !prev);
+  };
+
+  //NFT取得
   const fetchNFTs = async () => {
     let nfts;
     console.log("fetching nfts");
@@ -31,10 +38,10 @@ export default function Home() {
   };
 
   return (
-    <div className={styles.showCart}>
+    <body className={isOpen ? styles.showCart : ""}>
       <div className={styles.order_page}>
         <div className={styles.order_page_header}>
-          <MetaMask setWalletAddress={setWalletAddress} />
+          <MetaMask setWalletAddress={setWalletAddress}/>
           <input
             onChange={(e) => {
               setWalletAddress(e.target.value);
@@ -54,7 +61,9 @@ export default function Home() {
         </div>
 
         <div className={styles.order_page_body}>
-          <div className={styles.icon_cart}>
+          <div className={styles.icon_cart} id="icon_cart"
+            onClick={() => {cartClick();}}
+          >
             <div className={styles.icon_cart_inner}>
               <svg
                 class="w-6 h-6 text-gray-800 dark:text-white"
@@ -80,7 +89,7 @@ export default function Home() {
             <div className={styles.order_nftcard}>
               {NFTs.length
                 ? NFTs.map((nft) => {
-                    return <NFTCard nft={nft}></NFTCard>;
+                    return <NFTCard nft={nft} walletAddress={wallet}></NFTCard>;
                   })
                 : ""}
             </div>
@@ -104,12 +113,12 @@ export default function Home() {
               </div>
             </div>
             <div className={styles.btn}>
-              <button className={styles.close}>CLOSE</button>
+              <button className={styles.close} onClick={() => {cartClick();}}>CLOSE</button>
               <button className={styles.checkOut}>CHECK OUT</button>
             </div>
           </div>
         </div>
       </div>
-    </div>
+    </body>
   );
 }

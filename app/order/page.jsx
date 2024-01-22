@@ -1,6 +1,6 @@
 "use client";
 
-import { useEffect, useState } from "react";
+import { useEffect, useState, useRef } from "react";
 import { NFTCard } from "../components/order/nftCard";
 import { MetaMask } from "../components/order/metaMask";
 import "../globals.css";
@@ -10,6 +10,7 @@ export default function Home() {
   const [wallet, setWalletAddress] = useState("");
   const [NFTs, setNFTs] = useState([]);
   const [isOpen, setIsOpen] = useState(false);
+  const [carts, setCarts] = useState([]);
 
   //カートの中身表示
   const cartClick = () => {
@@ -89,7 +90,7 @@ export default function Home() {
             <div className={styles.order_nftcard}>
               {NFTs.length
                 ? NFTs.map((nft) => {
-                    return <NFTCard nft={nft} walletAddress={wallet}></NFTCard>;
+                    return <NFTCard nft={nft} walletAddress={wallet} carts={carts} setCarts={setCarts}></NFTCard>;
                   })
                 : ""}
             </div>

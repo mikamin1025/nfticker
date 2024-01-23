@@ -46,6 +46,7 @@
     // NFTの画像表示（商品一覧）
     & .ListProduct {
       width: 100%;
+      transition: .5s;
 
       & .order_nftcard {
         display: grid;
@@ -121,7 +122,8 @@
         grid-template-columns: repeat(2, 1fr);
 
         & button {
-          background-color: #E8BC0E;
+          // background-color: #E8BC0E;
+          background-color: var(--foreground-accent-rgb);
           border: none;
           font-family: Poppins;
           font-weight: 500;
@@ -129,7 +131,8 @@
         }
 
         & .close {
-          background-color: #eee;
+          // background-color: #eee;
+          background-color: var(--font-color-gray);
         }
       }
     }
@@ -138,10 +141,13 @@
 
 .showCart {
   & .order_page {
-    // transform: translateX(-250px);
-    & .cartTab {
-      inset: 0 0 0 auto;
 
+    & .ListProduct {
+      transform: translateX(-250px);
+    }
+
+    & .cartTab {
+      inset: 0 0 0 auto
     }
 
   }

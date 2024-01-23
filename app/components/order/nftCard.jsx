@@ -16,18 +16,19 @@ export const NFTCard = ({ nft, walletAddress, carts, setCarts }) => {
       );
 
       if (carts.length <= 0) {
-        console.log("初期追加のif文に入った");
+        // console.log("初期追加のif文に入った");
         setCarts([
           {
             walletAddress: walletAddress,
             collectionAddress: nft.contract.address,
             tokenID: nft.id.tokenId,
             title: nft.title,
+            thumbnail: nft.media[0].gateway,
             quantity: 1,
           },
         ]);
       } else if (positionThisProductInCart < 0) {
-        console.log("追加のif文に入った");
+        // console.log("追加のif文に入った");
         setCarts([
           ...carts,
           {
@@ -35,11 +36,12 @@ export const NFTCard = ({ nft, walletAddress, carts, setCarts }) => {
             collectionAddress: nft.contract.address,
             tokenID: nft.id.tokenId,
             title: nft.title,
+            thumbnail: nft.media[0].gateway,
             quantity: 1,
           },
         ]);
       } else {
-        console.log("quantity増加のif文に入った");
+        // console.log("quantity増加のif文に入った");
         const updatedCarts = carts.map((item, index) =>
           index === positionThisProductInCart
             ? { ...item, quantity: item.quantity + 1 }

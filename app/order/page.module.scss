@@ -106,10 +106,16 @@
               cursor: pointer;
               text-align: center;
               line-height: 25px;
+              user-select: none;
+
+              &:hover {
+                opacity: .7;
+              }
 
               &:nth-child(2) {
                 background-color: transparent;
                 color: var(--font-color-base);
+                cursor: default;
               }
             }
           }
@@ -150,5 +156,21 @@
       inset: 0 0 0 auto
     }
 
+  }
+}
+
+@media screen and (max-width:992px) {
+
+  // NFTの画像表示（商品一覧）
+  .order_page {
+    & .order_page_body {
+
+      // カートアイコン
+      & .ListProduct {
+        & .order_nftcard {
+          grid-template-columns: repeat(3, 1fr);
+        }
+      }
+    }
   }
 }

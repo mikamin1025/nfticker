@@ -100,7 +100,7 @@ export const MetaMask = (props) => {
 
   return (
     <div className={styles.MeataMask}>
-      <div>Injected Provider {hasProvider ? "DOES" : "DOES NOT"} Exist</div>
+      {/* <div>Injected Provider {hasProvider ? "DOES" : "DOES NOT"} Exist</div> */}
       {/* {window.ethereum?.isMetaMask && */}
       {wallet.accounts.length < 1 /* Updated */ ? (
         <button onClick={handleConnect}>MetaMaskに接続</button>

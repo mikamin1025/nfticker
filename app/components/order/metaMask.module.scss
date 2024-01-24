@@ -4,14 +4,23 @@
   place-items: center;
   min-width: 100vw;
   min-height: 10vh;
-  
-}
-.order_page {
-  button {
-    /* margin-top: 0.5em; */
-    padding: 0.5em 1em;
-    background-image: linear-gradient(90deg, rgba(103, 126, 250, 1), rgba(142, 84, 219, 1));
-    color: #fff;
-  }
 
+  &  button {
+    /* margin-top: 0.5em; */
+    font-size: var(--font-size-XS);
+    letter-spacing: .1em;
+    margin-top: 30px;
+    margin-bottom: 30px;
+    padding: 0.5em 1em;
+    background-color: var(--foreground-accent-rgb);
+    color: var(--font-color-gray);
+    border-radius: 20px;
+
+    &:hover {
+      opacity: .7;
+    }
+  }
 }
+
+
+

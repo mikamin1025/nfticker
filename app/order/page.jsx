@@ -11,12 +11,30 @@ export default function Home() {
   const [NFTs, setNFTs] = useState([]);
   const [isOpen, setIsOpen] = useState(false);
   const [carts, setCarts] = useState([]);
+  //注文数合計用変数
   let subQuantity = 0;
   const [totalQuantity, settotalQuantity] = useState(0);
 
   //カートの中身表示
   const cartClick = () => {
     setIsOpen((prev) => !prev);
+  };
+
+  //カート内のマイナスボタン押下処理
+  const mainusClick = async (event) => {
+    carts[event.target.id].quantity =
+      (await carts[event.target.id].quantity) - 1;
+
+    if(carts[event.target.id].quantity === 0){
+      carts.splice(event.target.id,1);
+    }
+    setCarts([...carts]);
+  };
+  //カート内のマイナスボタン押下処理
+  const plusClick = async (event) => {
+    carts[event.target.id].quantity =
+      (await carts[event.target.id].quantity) + 1;
+    setCarts([...carts]);
   };
 
   //NFT取得
@@ -31,6 +49,9 @@ export default function Home() {
     };
 
     //ウォレットに紐づくNFTデータを取得する
+    console.log("BBB");
+    console.log(wallet);
+
     const fetchURL = `${baseURL}?owner=${wallet}`;
     nfts = await fetch(fetchURL, requestOptions).then((data) => data.json());
 
@@ -40,13 +61,22 @@ export default function Home() {
     }
   };
 
+  //NFTを一覧表示する（wallet情報が変わったときに再表示）
+  useEffect(() => {
+    fetchNFTs();
+  },[wallet]);
+
   //カートのブラウザストレージ情報があったら取得
   useEffect(() => {
     //カートのブラウザストレージ情報があったら取得
-    if (localStorage.getItem("carts")) {
+    console.log("aaaa");
+    console.log(JSON.parse(localStorage.getItem("carts"))[0].walletAddress);
+    console.log(wallet);
+
+    if (localStorage.getItem("carts") && (JSON.parse(localStorage.getItem("carts"))[0].walletAddress) == wallet) {
       setCarts(JSON.parse(localStorage.getItem("carts")));
     }
-  }, []);
+  }, [wallet]);
 
   // カート追加ボタンを押したときの挙動（リストに追加）
   useEffect(() => {
@@ -58,7 +88,7 @@ export default function Home() {
         settotalQuantity(subQuantity);
       });
       //カート画面制御
-      setIsOpen(true);
+      // setIsOpen(true);
 
       //ブラウザメモリにデータ格納
       localStorage.setItem("carts", JSON.stringify(carts));
@@ -70,7 +100,7 @@ export default function Home() {
       <div className={styles.order_page}>
         <div className={styles.order_page_header}>
           <MetaMask setWalletAddress={setWalletAddress} />
-          <input
+          {/* <input
             onChange={(e) => {
               setWalletAddress(e.target.value);
             }}
@@ -85,7 +115,7 @@ export default function Home() {
             }}
           >
             表示
-          </button>
+          </button> */}
         </div>
 
         <div className={styles.order_page_body}>
@@ -139,7 +169,7 @@ export default function Home() {
             <h1>Shopping Cart</h1>
             <div className={styles.listCart}>
               {carts.length
-                ? carts.map((product) => {
+                ? carts.map((product, index) => {
                     return (
                       <div className={styles.item}>
                         <div className={styles.image}>
@@ -151,9 +181,25 @@ export default function Home() {
                           &yen;{500 * product.quantity}
                         </div>
                         <div className={styles.quantity}>
-                          <span className={styles.minus}>&lt;</span>
+                          <span
+                            className={styles.minus}
+                            id={index}
+                            onClick={(e) => {
+                              mainusClick(e);
+                            }}
+                          >
+                            &lt;
+                          </span>
                           <span>{product.quantity}</span>
-                          <span className={styles.plus}>&gt;</span>
+                          <span
+                            className={styles.plus}
+                            id={index}
+                            onClick={(e) => {
+                              plusClick(e);
+                            }}
+                          >
+                            &gt;
+                          </span>
                         </div>
                       </div>
                     );

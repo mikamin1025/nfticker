@@ -49,9 +49,6 @@ export default function Home() {
     };
 
     //ウォレットに紐づくNFTデータを取得する
-    console.log("BBB");
-    console.log(wallet);
-
     const fetchURL = `${baseURL}?owner=${wallet}`;
     nfts = await fetch(fetchURL, requestOptions).then((data) => data.json());
 
@@ -69,12 +66,10 @@ export default function Home() {
   //カートのブラウザストレージ情報があったら取得
   useEffect(() => {
     //カートのブラウザストレージ情報があったら取得
-    console.log("aaaa");
-    console.log(JSON.parse(localStorage.getItem("carts"))[0].walletAddress);
-    console.log(wallet);
-
-    if (localStorage.getItem("carts") && (JSON.parse(localStorage.getItem("carts"))[0].walletAddress) == wallet) {
-      setCarts(JSON.parse(localStorage.getItem("carts")));
+    if (localStorage.getItem("carts")) {
+      if((JSON.parse(localStorage.getItem("carts"))[0].walletAddress) == wallet) {
+        setCarts(JSON.parse(localStorage.getItem("carts")));
+      }
     }
   }, [wallet]);
 

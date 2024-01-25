@@ -311,7 +311,8 @@
         font-size: var(--sp-font-size-M);
         font-weight: 700;
         z-index: 10;
-        border: 2px solid var(--font-color-gray);
+        border: 1px solid var(--font-color-gray);
+        opacity: .9;
       }
 
     }

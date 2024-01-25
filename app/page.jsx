@@ -36,6 +36,9 @@ export default function Home() {
         <a className={styles.button_connectwallet} href="./order">
           Connect Wallet
         </a>
+        <a className={styles.button_connectwallet_bottom} href="./order">
+          Connect Wallet
+        </a>
       </div>
       <div className={styles.section}>
         <h2 className={styles.section_title}>SURVICE</h2>

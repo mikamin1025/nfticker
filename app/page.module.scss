@@ -69,6 +69,10 @@
       }
     }
 
+    & .button_connectwallet_bottom {
+      display: none;
+    }
+
   }
 
   & .section {
@@ -294,6 +298,22 @@
         }
       }
 
+      & .button_connectwallet_bottom {
+        display: block;
+        position: fixed;
+        height: 50px;
+        line-height: 50px;
+        right: 0;
+        bottom: 0;
+        left: 0;
+        background-color: var(--foreground-accent-rgb);
+        color: var(--foreground-rgb);
+        font-size: var(--sp-font-size-M);
+        font-weight: 700;
+        z-index: 10;
+        border: 2px solid var(--font-color-gray);
+      }
+
     }
 
     & .section {
@@ -332,6 +352,7 @@
             & .order_step_name {
               font-size: var(--sp-font-size-M);
             }
+
             & .order_step_detail {
               margin-top: 10px;
               font-weight: 400;

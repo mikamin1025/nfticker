@@ -183,7 +183,7 @@ export default function Home() {
                               mainusClick(e);
                             }}
                           >
-                            &lt;
+                            -
                           </span>
                           <span>{product.quantity}</span>
                           <span
@@ -193,7 +193,7 @@ export default function Home() {
                               plusClick(e);
                             }}
                           >
-                            &gt;
+                            +
                           </span>
                         </div>
                       </div>

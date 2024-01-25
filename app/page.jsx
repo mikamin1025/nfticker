@@ -46,6 +46,7 @@ export default function Home() {
           <p className={styles.section_detail_text}>
             あなたが所有している「NFT」を「ステッカー（シール）」にするサービスです。
           </p>
+          <Image src="/image/survice_img.png"  height={267} width={730} alt="" className={styles.survice_img}/>
         </div>
       </div>
       <div className={styles.section}>

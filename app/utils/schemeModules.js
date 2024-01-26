@@ -15,4 +15,4 @@ const ItemSchma = new Schema({
 });
 
 export const ItemModel =
-  mongoose.models.Item || mongoose.model("Item", ItemSchma);
+  mongoose.models.Order || mongoose.model("Order", ItemSchma);

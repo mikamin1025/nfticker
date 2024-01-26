@@ -108,6 +108,8 @@ export default function Home() {
         status: "pending", // 例として "pending" を設定、実際の状態に合わせて変更する
       }));
 
+      console.log(orderItems);
+
       const response = await fetch("http://localhost:3000/api/order", {
         method: "POST",
         headers: {

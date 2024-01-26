@@ -6,7 +6,7 @@ import { ItemModel } from "../../utils/schemeModules";
 
 export async function POST(request) {
   const reqBody = await request.json();
-  // console.log(reqBody);
+  console.log(reqBody);
 
   try {
     await connectDB();

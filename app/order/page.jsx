@@ -1,3 +1,4 @@
+// C:\Users\User\Desktop\nfticker\app\order\page.jsx
 "use client";
 
 import { useEffect, useState, useRef } from "react";
@@ -7,37 +8,37 @@ import "../globals.css";
 import styles from "./page.module.scss";
 
 export default function Home() {
-  const [wallet, setWalletAddress] = useState("");
-  const [NFTs, setNFTs] = useState([]);
-  const [isOpen, setIsOpen] = useState(false);
-  const [carts, setCarts] = useState([]);
-  //注文数合計用変数
-  let subQuantity = 0;
-  const [totalQuantity, settotalQuantity] = useState(0);
+  const [wallet, setWalletAddress] = useState(""); //walletAdress
+  const [NFTs, setNFTs] = useState([]); //NFTデータ
+  const [isOpen, setIsOpen] = useState(false); //カートの表示・非表示
+  const [carts, setCarts] = useState([]); //カートの中身
+  let subQuantity = 0; //注文数合計用変数
+  const [totalQuantity, settotalQuantity] = useState(0); //注文ステッカー合計数
 
-  //カートの中身表示
+  //■カートの中身表示
   const cartClick = () => {
     setIsOpen((prev) => !prev);
   };
 
-  //カート内のマイナスボタン押下処理
+  //■カート内のマイナスボタン押下処理
   const mainusClick = async (event) => {
     carts[event.target.id].quantity =
       (await carts[event.target.id].quantity) - 1;
 
-    if(carts[event.target.id].quantity === 0){
-      carts.splice(event.target.id,1);
+    if (carts[event.target.id].quantity === 0) {
+      carts.splice(event.target.id, 1);
     }
     setCarts([...carts]);
   };
-  //カート内のマイナスボタン押下処理
+
+  //■カート内のプラスボタン押下処理
   const plusClick = async (event) => {
     carts[event.target.id].quantity =
       (await carts[event.target.id].quantity) + 1;
     setCarts([...carts]);
   };
 
-  //NFT取得
+  //■NFT取得
   const fetchNFTs = async () => {
     let nfts;
     console.log("fetching nfts");
@@ -58,22 +59,24 @@ export default function Home() {
     }
   };
 
-  //NFTを一覧表示する（wallet情報が変わったときに再表示）
+  //■NFTを一覧表示する（wallet情報が変わったときに再表示）
   useEffect(() => {
     fetchNFTs();
-  },[wallet]);
+  }, [wallet]);
 
-  //カートのブラウザストレージ情報があったら取得
+  //■カートのブラウザストレージ情報があったら取得
   useEffect(() => {
     //カートのブラウザストレージ情報があったら取得
     if (localStorage.getItem("carts")) {
-      if((JSON.parse(localStorage.getItem("carts"))[0].walletAddress) == wallet) {
+      if (
+        JSON.parse(localStorage.getItem("carts"))[0].walletAddress == wallet
+      ) {
         setCarts(JSON.parse(localStorage.getItem("carts")));
       }
     }
   }, [wallet]);
 
-  // カート追加ボタンを押したときの挙動（リストに追加）
+  //■カート追加ボタンを押したときの挙動（リストに追加）
   useEffect(() => {
     //「カート追加」ボタン押下でカート内容が表示
     if (carts.length > 0) {
@@ -89,6 +92,36 @@ export default function Home() {
       localStorage.setItem("carts", JSON.stringify(carts));
     }
   }, [carts]);
+
+  //■注文確定ボタン押下時の処理
+  const handleCheckOut = async(e) => {
+    e.preventDefault(); //ブラウザのリロードを止める
+    try {
+      const orderItems = carts.map((item) => ({
+        walletAddress: item.walletAddress,
+        collectionAddress: item.collectionAddress,
+        tokenID: item.tokenID,
+        title: item.title,
+        thumbnail: item.thumbnail,
+        quantity: item.quantity,
+        orderDatetime: new Date(), // 現在の日時を取得して設定
+        status: "pending", // 例として "pending" を設定、実際の状態に合わせて変更する
+      }));
+
+      const response = await fetch("http://localhost:3000/api/order", {
+        method: "POST",
+        headers: {
+          Accept: "application/json",
+          "Content-Type": "application/json",
+        },
+        body: JSON.stringify(orderItems),
+      });
+      const jsonData = await response.json();
+      alert(jsonData.message);
+    } catch (error) {
+      alert("商品情報更新失敗");
+    }
+  };
 
   return (
     <body className={isOpen ? styles.showCart : ""}>
@@ -210,7 +243,7 @@ export default function Home() {
               >
                 CLOSE
               </button>
-              <button className={styles.checkOut}>CHECK OUT</button>
+              <button className={styles.checkOut} onClick={handleCheckOut}>CHECK OUT</button>
             </div>
           </div>
         </div>

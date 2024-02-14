@@ -42,6 +42,11 @@ export default function Home() {
 
   //■NFT取得
   const fetchNFTs = async () => {
+    // walletが空の場合は何もせずに関数を終了
+    if (!wallet) {
+      return;
+    }
+
     let nfts;
     console.log("fetching nfts");
     // const api_key = "A8A1Oo_UTB9IN5oNHfAc2tAxdR4UVwfM";
@@ -53,6 +58,7 @@ export default function Home() {
 
     //ウォレットに紐づくNFTデータを取得する
     const fetchURL = `${baseURL}?owner=${wallet}`;
+    console.log(fetchURL);
     nfts = await fetch(fetchURL, requestOptions).then((data) => data.json());
 
     if (nfts) {
@@ -173,7 +179,7 @@ export default function Home() {
   };
 
   return (
-    <body className={isOpen ? styles.showCart : ""}>
+    <div id="root" className={isOpen ? styles.showCart : null}>
       <div className={styles.order_page}>
         <div className={styles.order_page_header}>
           <MetaMask setWalletAddress={setWalletAddress} />
@@ -205,7 +211,7 @@ export default function Home() {
           >
             <div className={styles.icon_cart_inner}>
               <svg
-                class="w-6 h-6 text-gray-800 dark:text-white"
+                className="w-6 h-6 text-gray-800 dark:text-white"
                 aria-hidden="true"
                 xmlns="http://www.w3.org/2000/svg"
                 fill="none"
@@ -213,9 +219,9 @@ export default function Home() {
               >
                 <path
                   stroke="currentColor"
-                  stroke-linecap="round"
-                  stroke-linejoin="round"
-                  stroke-width="2"
+                  strokeLinecap="round"
+                  strokeLinejoin="round"
+                  strokeWidth="2"
                   d="M6 15a2 2 0 1 0 0 4 2 2 0 0 0 0-4Zm0 0h8m-8 0-1-4m9 4a2 2 0 1 0 0 4 2 2 0 0 0 0-4Zm-9-4h10l2-7H3m2 7L3 4m0 0-.792-3H1"
                 />
               </svg>
@@ -230,6 +236,7 @@ export default function Home() {
                 ? NFTs.map((nft) => {
                     return (
                       <NFTCard
+                        key={nft.contract.address + nft.id.tokenId}
                         nft={nft}
                         walletAddress={wallet}
                         carts={carts}
@@ -248,7 +255,7 @@ export default function Home() {
               {carts.length
                 ? carts.map((product, index) => {
                     return (
-                      <div className={styles.item}>
+                      <div className={styles.item} key={index}>
                         <div className={styles.image}>
                           <img src={product.thumbnail} alt="" />
                         </div>
@@ -299,6 +306,6 @@ export default function Home() {
           </div>
         </div>
       </div>
-    </body>
+    </div>
   );
 }

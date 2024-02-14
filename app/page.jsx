@@ -151,7 +151,7 @@ export default function Home() {
                 id="toggle1"
                 className={styles.toggle}
               ></input>
-              <label className={styles.title} for="toggle1">
+              <label className={styles.title} htmlFor="toggle1">
                 Ｑ．費用はどれくらいですか？
               </label>
               <div className={styles.content}>
@@ -164,7 +164,7 @@ export default function Home() {
                 id="toggle2"
                 className={styles.toggle}
               ></input>
-              <label className={styles.title} for="toggle2">
+              <label className={styles.title} htmlFor="toggle2">
                 Ｑ．ステッカーの配送方法は？
               </label>
               <div className={styles.content}>
@@ -177,7 +177,7 @@ export default function Home() {
                 id="toggle3"
                 className={styles.toggle}
               ></input>
-              <label className={styles.title} for="toggle3">
+              <label className={styles.title} htmlFor="toggle3">
                 Ｑ．注文から納品までどれくらいの期間がかかりますか？
               </label>
               <div className={styles.content}>
@@ -190,7 +190,7 @@ export default function Home() {
                 id="toggle4"
                 className={styles.toggle}
               ></input>
-              <label className={styles.title} for="toggle4">
+              <label className={styles.title} htmlFor="toggle4">
                 Ｑ．WalletはMetaMask（メタマスク）のみですか？
               </label>
               <div className={styles.content}>
@@ -203,7 +203,7 @@ export default function Home() {
                 id="toggle5"
                 className={styles.toggle}
               ></input>
-              <label className={styles.title} for="toggle5">
+              <label className={styles.title} htmlFor="toggle5">
                 Ｑ．自分が所有するNFT以外を注文する方法はありますか？
               </label>
               <div className={styles.content}>
@@ -216,7 +216,7 @@ export default function Home() {
                 id="toggle6"
                 className={styles.toggle}
               ></input>
-              <label className={styles.title} for="toggle6">
+              <label className={styles.title} htmlFor="toggle6">
                 Ｑ．ギフト包装は対応できますか？
               </label>
               <div className={styles.content}>
@@ -229,7 +229,7 @@ export default function Home() {
                 id="toggle7"
                 className={styles.toggle}
               ></input>
-              <label className={styles.title} for="toggle7">
+              <label className={styles.title} htmlFor="toggle7">
                 Ｑ．注文後のキャンセル方法は？
               </label>
               <div className={styles.content}>

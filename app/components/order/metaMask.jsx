@@ -6,25 +6,21 @@ import detectEthereumProvider from "@metamask/detect-provider";
 
 export const MetaMask = (props) => {
   const [hasProvider, setHasProvider] = useState(null);
-  const initialState = { accounts: [] }; /* New */
-  const [wallet, setWallet] = useState(initialState); /* New */
-
-  const [isConnecting, setIsConnecting] = useState(false); /* New */
-  const [error, setError] = useState(false); /* New */
-  const [errorMessage, setErrorMessage] = useState(""); /* New */
+  const initialState = { accounts: [] };
+  const [wallet, setWallet] = useState(initialState);
+  const [isConnecting, setIsConnecting] = useState(false);
+  const [error, setError] = useState(false);
+  const [errorMessage, setErrorMessage] = useState("");
 
   useEffect(() => {
     const refreshAccounts = (accounts) => {
-      /* New */
       if (accounts.length > 0) {
-        /* New */
-        updateWallet(accounts); /* New */
+        updateWallet(accounts);
       } else {
-        /* New */
-        // if length 0, user is disconnected                    /* New */
-        setWallet(initialState); /* New */
-      } /* New */
-    }; /* New */
+        // if length 0, user is disconnected
+        setWallet(initialState);
+      }
+    };
 
     const getProvider = async () => {
       const provider = await detectEthereumProvider({ silent: true });
@@ -32,87 +28,66 @@ export const MetaMask = (props) => {
       setHasProvider(Boolean(provider)); // transform provider to true or false
 
       if (provider) {
-        /* New */
-        const accounts = await window.ethereum.request(
-          /* New */
-          { method: "eth_accounts" } /* New */
-        ); /* New */
-        refreshAccounts(accounts); /* New */
-        window.ethereum.on("accountsChanged", refreshAccounts); /* New */
-      } /* New */
+        const accounts = await window.ethereum.request({
+          method: "eth_accounts",
+        });
+        refreshAccounts(accounts);
+        window.ethereum.on("accountsChanged", refreshAccounts);
+      }
     };
 
     getProvider();
     return () => {
-      /* New */
       window.ethereum?.removeListener("accountsChanged", refreshAccounts);
-    }; /* New */
+    };
   }, []);
 
   const updateWallet = async (accounts) => {
-    /* New */
-    setWallet({ accounts }); /* New */
-  }; /* New */
+    setWallet({ accounts });
+    // 親コンポーネントでの状態更新
+    props.setWalletAddress(accounts.length > 0 ? accounts[0] : "");
+  };
 
   const handleConnect = async () => {
-    /* Updated */
-    setIsConnecting(true); /* New */
-    await window.ethereum
-      .request({
-        /* Updated */ method: "eth_requestAccounts",
-      })
-      .then((accounts) => {
-        /* New */
-        setError(false); /* New */
-        updateWallet(accounts); /* New */
-      }) /* New */
-      .catch((err) => {
-        /* New */
-        setError(true); /* New */
-        setErrorMessage(err.message); /* New */
-      }); /* New */
-    setIsConnecting(false); /* New */
+    setIsConnecting(true);
+    try {
+      const accounts = await window.ethereum.request({
+        method: "eth_requestAccounts",
+      });
+      setError(false);
+      updateWallet(accounts);
+    } catch (err) {
+      setError(true);
+      setErrorMessage(err.message);
+    }
+    setIsConnecting(false);
   };
   const handleRevoke = async () => {
     var result = window.confirm("ウォレット接続を解除しますか");
 
     if (result) {
-      await window.ethereum
-        .request({
+      try {
+        await window.ethereum.request({
           method: "wallet_revokePermissions",
-          params: [
-            {
-              eth_accounts: {},
-            },
-          ],
-        })
-        .then(() => {
-          setError(false);
-          updateWallet("");
-          // reloadメソッドによりページをリロード
-          window.location.reload();
+          params: [{ eth_accounts: {} }],
         });
-    } else {
-      //処理なし
-      return;
+        setError(false);
+        updateWallet("");
+        window.location.reload();
+      } catch (err) {
+        console.error("ウォレットの接続解除中にエラーが発生しました:", err);
+      }
     }
   };
 
   return (
     <div className={styles.MeataMask}>
-      {/* <div>Injected Provider {hasProvider ? "DOES" : "DOES NOT"} Exist</div> */}
-      {/* {window.ethereum?.isMetaMask && */}
-      {wallet.accounts.length < 1 /* Updated */ ? (
-        <button onClick={handleConnect}>MetaMaskに接続</button>
+      {wallet.accounts.length < 1 ? (
+        <button onClick={handleConnect} disabled={isConnecting}>
+          {isConnecting ? "接続中..." : "MetaMaskに接続"}
+        </button>
       ) : (
         <button onClick={handleRevoke}>MetaMaskの接続を解除</button>
-      )}
-
-      {wallet.accounts.length > 0 /* New */ ? (
-        // <div>Wallet Accounts: { wallet.accounts[0] }</div>
-        <div>{props.setWalletAddress(wallet.accounts[0])}</div>
-      ) : (
-        <div>{props.setWalletAddress("")}</div>
       )}
     </div>
   );

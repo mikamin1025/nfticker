@@ -6,6 +6,7 @@ import { NFTCard } from "../components/order/nftCard";
 import { MetaMask } from "../components/order/metaMask";
 import "../globals.css";
 import styles from "./page.module.scss";
+import { useRouter } from "next/navigation";
 
 export default function Home() {
   const [wallet, setWalletAddress] = useState(""); //walletAdress
@@ -14,6 +15,7 @@ export default function Home() {
   const [carts, setCarts] = useState([]); //カートの中身
   let subQuantity = 0; //注文数合計用変数
   const [totalQuantity, settotalQuantity] = useState(0); //注文ステッカー合計数
+  const router = useRouter();
 
   //■カートの中身表示
   const cartClick = () => {
@@ -61,7 +63,11 @@ export default function Home() {
 
   //■NFTを一覧表示する（wallet情報が変わったときに再表示）
   useEffect(() => {
-    fetchNFTs();
+    const fetchData = async () => {
+      await fetchNFTs();
+    };
+
+    fetchData();
   }, [wallet]);
 
   //■カートのブラウザストレージ情報があったら取得
@@ -93,11 +99,35 @@ export default function Home() {
     }
   }, [carts]);
 
-  //■注文確定ボタン押下時の処理
-  const handleCheckOut = async(e) => {
-    e.preventDefault(); //ブラウザのリロードを止める
+  //■chekout時の処理
+  const startCheckout = async () => {
+    console.log("checkout処理開始");
     try {
+      const response = await fetch(
+        `${process.env.NEXT_PUBLIC_API_URL}/create_checkout_session`,
+        {
+          method: "POST",
+          headers: { "Content-Type": "application/json" },
+          body: JSON.stringify({
+            title: "NFTステッカー",
+            price: 500,
+            totalQuantity: totalQuantity,
+            walletAddress: wallet,
+          }),
+        }
+      );
+
+      const responseData = await response.json();
+
+      //stripeのセッションIDを取得する
+      let sessionID = responseData.session_id;
+
+      //★注文データをDBに保存する
       const orderItems = carts.map((item) => ({
+        sessionID: sessionID,
+        payment_intent: "",
+        order_name: "",
+        order_address: "",
         walletAddress: item.walletAddress,
         collectionAddress: item.collectionAddress,
         tokenID: item.tokenID,
@@ -108,9 +138,7 @@ export default function Home() {
         status: "pending", // 例として "pending" を設定、実際の状態に合わせて変更する
       }));
 
-      console.log(orderItems);
-
-      const response = await fetch("http://localhost:3000/api/order", {
+      const response_postDB = await fetch("/api/order", {
         method: "POST",
         headers: {
           Accept: "application/json",
@@ -118,10 +146,29 @@ export default function Home() {
         },
         body: JSON.stringify(orderItems),
       });
-      const jsonData = await response.json();
+      const jsonData = await response_postDB.json();
       alert(jsonData.message);
+      console.log("DB書き込み処理完了");
+
+      //checkout画面（stripe）に遷移する
+      if (responseData) {
+        router.push(responseData.checkout_url);
+      }
+    } catch (err) {
+      console.log(err);
+      console.log("checkout処理err");
+    }
+  };
+
+  //■注文確定ボタン押下時の処理
+  const handleCheckOut = async (e) => {
+    e.preventDefault(); //ブラウザのリロードを止める
+    try {
+      //★Stripeセッションを作成
+      startCheckout();
     } catch (error) {
-      alert("商品情報更新失敗");
+      console.error("チェックアウト中にエラーが発生しました:", error);
+      alert("注文の処理に失敗しました。もう一度試してください。");
     }
   };
 
@@ -245,7 +292,9 @@ export default function Home() {
               >
                 CLOSE
               </button>
-              <button className={styles.checkOut} onClick={handleCheckOut}>CHECK OUT</button>
+              <button className={styles.checkOut} onClick={handleCheckOut}>
+                CHECK OUT
+              </button>
             </div>
           </div>
         </div>

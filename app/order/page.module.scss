@@ -7,11 +7,42 @@
   font-family: var(--font-mono);
 
   & .order_page_header {
-    // background-color: blue;
+    position: fixed;
+    left: 50%;
+    top: 20px;
+    transform: translateX(-50%);
+    background-color: var(--foreground-rgb);
+    z-index: 10;
+
+    & .walletaddress_block {
+      & input {
+        display: inline-block;
+        width: 500px;
+        height: 40px;
+        box-sizing: border-box;
+        outline: none;
+        border: 1px solid lightgray;
+        border-radius: 3px;
+        padding: 10px 10px 10px 10px;
+        margin-right: 2px;
+      }
+
+      & button {
+        vertical-align: middle;
+        height: 40px;
+        border-radius: 3px;
+        border: 1px solid lightgray;
+        box-sizing: border-box;
+        padding: 10px 20px;
+        background-color: var(--foreground-accent-rgb);
+        cursor: pointer;
+      }
+    }
   }
 
   & .order_page_body {
     width: 100%;
+    margin-top: 80px;
 
     // カートアイコン
     & .icon_cart {

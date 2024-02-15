@@ -6,10 +6,21 @@
   background-color: #111;
   border-radius: 20px;
 
-  & .card_img {
-    width: 100%;
+  & .card_img_block {
     border-radius: 10px;
+    overflow: hidden;
+
+    & .card_img {
+      width: 100%;
+      transition: 0.1s all;
+
+      &:hover {
+        transform: scale(1.1, 1.1);
+        transition: 0.3s all;
+      }
+    }
   }
+
   & .card_detail {
     & .card_title {
       color: var(--font-color-base);
@@ -17,6 +28,7 @@
       font-weight: 400;
       margin: 5px auto;
     }
+
     & .addCart {
       background-color: #353432;
       color: var(--font-color-base);

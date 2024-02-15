@@ -101,7 +101,7 @@ export default function Home() {
       // setIsOpen(true);
 
       //ブラウザメモリにデータ格納
-      localStorage.setItem("carts", JSON.stringify(carts));
+      // localStorage.setItem("carts", JSON.stringify(carts));
     }
   }, [carts]);
 
@@ -116,7 +116,7 @@ export default function Home() {
           headers: { "Content-Type": "application/json" },
           body: JSON.stringify({
             title: "NFTステッカー",
-            price: 500,
+            price: 500, //単価は要調整
             totalQuantity: totalQuantity,
             walletAddress: wallet,
           }),
@@ -182,23 +182,27 @@ export default function Home() {
     <div id="root" className={isOpen ? styles.showCart : null}>
       <div className={styles.order_page}>
         <div className={styles.order_page_header}>
-          <MetaMask setWalletAddress={setWalletAddress} />
-          {/* <input
-            onChange={(e) => {
-              setWalletAddress(e.target.value);
-            }}
-            value={wallet}
-            type={"text"}
-            placeholder="Add your wallet address"
-          ></input>
-          <button
-            className=""
-            onClick={() => {
-              fetchNFTs();
-            }}
-          >
-            表示
-          </button> */}
+          {/* <MetaMask setWalletAddress={setWalletAddress} /> */}
+          <div className={styles.walletaddress_block}>
+            <input
+              className={styles.walletaddress_text}
+              id="walletaddress_text"
+              onChange={(e) => {
+                setWalletAddress(e.target.value);
+              }}
+              value={wallet}
+              type={"text"}
+              placeholder="Add wallet address"
+            ></input>
+            <button
+              className={styles.walletaddress_btn}
+              onClick={() => {
+                fetchNFTs();
+              }}
+            >
+              表示
+            </button>
+          </div>
         </div>
 
         <div className={styles.order_page_body}>

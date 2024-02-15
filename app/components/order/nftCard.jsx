@@ -11,8 +11,9 @@ export const NFTCard = ({ nft, walletAddress, carts, setCarts }) => {
     if (addButtonRef.current.className.includes("add")) {
       //選択した商品がすでにカートに入っているか判別する変数
       let positionThisProductInCart = carts.findIndex(
-        (value) => value.collectionAddress == nft.contract.address &&
-        value.tokenID == nft.id.tokenId
+        (value) =>
+          value.collectionAddress == nft.contract.address &&
+          value.tokenID == nft.id.tokenId
       );
 
       if (carts.length <= 0) {
@@ -59,7 +60,9 @@ export const NFTCard = ({ nft, walletAddress, carts, setCarts }) => {
 
   return (
     <div className={styles.card_block}>
-      <img className={styles.card_img} src={nft.media[0].gateway}></img>
+      <div className={styles.card_img_block}>
+        <img className={styles.card_img} src={nft.media[0].gateway}></img>
+      </div>
       <div className={styles.card_detail}>
         <h2 className={styles.card_title}>{nft.title}</h2>
         {/* <p className="">Id: {nft.id.tokenId}</p> */}

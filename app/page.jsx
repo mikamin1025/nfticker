@@ -26,7 +26,7 @@ export default function Home() {
         </div>
         <div className={styles.mv_title}>
           <p className={styles.mv_subtitle2}>
-            スマホケースに挟んだり！パソコンに貼ったり！
+            ＼スマホケースに挟んだり！パソコンに貼ったり！／
           </p>
           <h1 className={styles.mv_maintitle}>NFT TO STICKER</h1>
           <p className={styles.mv_subtitle}>

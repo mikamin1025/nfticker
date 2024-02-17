@@ -34,7 +34,7 @@ export default function Home() {
           </p>
         </div>
         <a className={styles.button_connectwallet} href="./order">
-          Connect Wallet
+          NFTを選択する
         </a>
         {/* <a className={styles.button_connectwallet_bottom} href="./order">
           Connect Wallet
@@ -44,7 +44,7 @@ export default function Home() {
         <h2 className={styles.section_title}>SURVICE</h2>
         <div className={styles.section_detail}>
           <p className={styles.section_detail_text}>
-            あなたが所有している「NFT」を「ステッカー（シール）」にするサービスです。
+            あなたが所有している「NFT」を「ステッカー」にするサービスです。
           </p>
           <Image src="/image/survice_img.png"  height={267} width={730} alt="" className={styles.survice_img}/>
         </div>

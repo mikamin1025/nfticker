@@ -1,213 +1,4 @@
-.main {
-  width: 100vw;
-  height: auto;
-  background-color: var(--foreground-rgb);
-  color: var(--font-color-base);
-
-  & .mv_block {
-    width: 80%;
-    margin: 0 auto;
-    text-align: center;
-
-    & .mv_nav {
-      margin: 0 calc(50% - 50vw);
-      width: 100vw;
-      height: 100px;
-
-      & .mv_wallet {
-        color: var(--font-color-gray);
-        position: fixed;
-        top: 20px;
-        right: 35px;
-
-        & svg {
-          width: 2.5rem;
-
-          &:hover {
-            color: var(--foreground-accent-rgb);
-          }
-        }
-      }
-    }
-
-    & .mv_title {
-      & .mv_maintitle {
-        font-size: var(--font-size-L);
-        font-weight: bold;
-        color: var(--foreground-accent-rgb);
-        font-family: var(--font-title);
-      }
-
-      & .mv_subtitle {
-        font-size: var(--font-size-S);
-        font-weight: bold;
-        letter-spacing: var(--letter-space);
-        font-family: var(--font-accent);
-      }
-
-      & .mv_subtitle2 {
-        font-size: var(--font-size-XS);
-        font-weight: bold;
-        letter-spacing: var(--letter-space);
-        font-family: var(--font-accent);
-      }
-    }
-
-    & .button_connectwallet {
-      display: inline-block;
-      background-color: var(--foreground-rgb);
-      font-size: var(--font-size-M);
-      font-weight: bold;
-      margin-top: 60px;
-      padding: 5px 40px;
-      border-radius: 50px;
-      border: 1px solid var(--foreground-accent-rgb);
-
-      &:hover {
-        background-color: var(--foreground-accent-rgb);
-        color: var(--font-color-gray);
-      }
-    }
-
-    & .button_connectwallet_bottom {
-      display: none;
-    }
-
-  }
-
-  & .section {
-    width: 80%;
-    margin: 120px auto 100px;
-    text-align: center;
-
-
-    & .section_title {
-      font-size: var(--font-size-M);
-      font-family: var(--font-title);
-      font-weight: bold;
-    }
-
-    & .section_detail {
-      & .section_detail_text {
-        font-size: var(--font-size-XS);
-        margin-top: 30px;
-        letter-spacing: .1em;
-      }
-      & .survice_img {
-        object-fit: cover;
-      }
-
-      // HOW TO ORDER
-      & .order_flow {
-        display: grid;
-        grid-template-columns: 1fr 1fr;
-        width: 80%;
-        // margin-top: 30px;
-        margin: 30px auto 0;
-
-
-        & .order_step {
-          & h3 {
-            font-size: var(--font-size-S);
-          }
-
-          & .order_step_detail {
-            margin-top: 10px;
-            font-weight: 400;
-          }
-
-          & svg {
-            width: 14rem;
-            color: var(--font-color-gray);
-            margin-top: 40px;
-            margin-bottom: 120px;
-          }
-        }
-      }
-
-      // FAQ
-      .accordion {
-        margin: 3em auto;
-        max-width: 60vw;
-      }
-
-      .toggle {
-        display: none;
-      }
-
-      .option {
-        position: relative;
-        margin-bottom: 1em;
-      }
-
-      .title,
-      .content {
-        -webkit-backface-visibility: hidden;
-        backface-visibility: hidden;
-        transform: translateZ(0);
-        transition: all 0.3s;
-      }
-
-      .title {
-        border: solid 1px var(--font-color-base);
-        ;
-        padding: 1em;
-        display: block;
-        color: var(--font-color-base);
-        font-weight: bold;
-        text-align: left;
-      }
-
-      .title::after,
-      .title::before {
-        content: "";
-        position: absolute;
-        right: 1.25em;
-        top: 1.25em;
-        width: 2px;
-        height: 0.75em;
-        background-color: #999;
-        transition: all 0.3s;
-      }
-
-      .title::after {
-        transform: rotate(90deg);
-      }
-
-      .toggle:checked+.title {
-        max-height: 500px;
-        transition: all 0.2s;
-        background-color: var(--foreground-accent-rgb);
-        color: var(--foreground-rgb);
-      }
-
-      .content {
-        max-height: 0;
-        overflow: hidden;
-        color: var(--font-color-base);
-        text-align: left;
-      }
-
-      .content p {
-        margin: 0;
-        padding: 0.5em 1em 1em;
-        font-size: 0.9em;
-        line-height: 1.5;
-      }
-
-      .toggle:checked+.title+.content {
-        max-height: 500px;
-        transition: all 1.5s;
-      }
-
-      .toggle:checked+.title::before {
-        transform: rotate(90deg) !important;
-      }
-    }
-
-
-  }
-}
+.main {}
 
 
 
@@ -227,238 +18,60 @@
 
 /* Mobile */
 @media (max-width: 700px) {
-  .main {
-    width: 100vw;
-    height: auto;
-    background-color: var(--foreground-rgb);
-    color: var(--font-color-base);
+  .header_block {
+    height: 100svh;
 
-    & .mv_block {
-      width: 90%;
-      margin: 0 auto;
-      text-align: center;
+    & .header_titlearea {
+      width: 100vw;
+      height: 50%;
+      background-color: var(--foreground-accent-rgb);
+      display: flex;
+      justify-content: center;
+      align-items: center;
 
-      & .mv_nav {
-        margin: 0 calc(50% - 50vw) 120px;
-        width: 100vw;
-        height: 60px;
-
-        & .mv_wallet {
-          color: var(--font-color-gray);
-          position: fixed;
-          top: 20px;
-          right: 20px;
-
-          & svg {
-            width: 2.0rem;
-
-            &:hover {
-              color: var(--foreground-accent-rgb);
-            }
-          }
-        }
-      }
-
-      & .mv_title {
-        & .mv_maintitle {
-          font-size: var(--sp-font-size-L);
-          font-family: var(--font-title);
-          font-weight: bold;
-          color: var(--foreground-accent-rgb);
-          margin-top: 10px;
-          margin-bottom: 20px;
-          line-height: 5.5rem;
-        }
-
-        & .mv_subtitle {
-          font-size: var(--sp-font-size-S);
-          font-weight: bold;
-          letter-spacing: var(--letter-space);
-          font-family: var(--font-accent);
-          line-height: 1.6rem;
-        }
-
-        & .mv_subtitle2 {
-          font-size: var(--sp-font-size-XS);
-          font-weight: bold;
-          letter-spacing: var(--letter-space);
-          font-family: var(--font-accent);
-        }
-      }
-
-      & .button_connectwallet {
+      & .header_title {
         display: inline-block;
-        background-color: var(--foreground-rgb);
-        font-size: var(--sp-font-size-M);
-        font-weight: bold;
-        margin-top: 120px;
-        padding: 18px 40px;
-        border-radius: 50px;
-        border: 1px solid var(--foreground-accent-rgb);
-
-        &:hover {
-          background-color: var(--foreground-accent-rgb);
-          color: var(--font-color-gray);
-        }
+        font-family: var(--font-accent);
+        font-size: var(--sp-font-size-L);
+        white-space: pre-wrap;
+        line-height: 5rem;
       }
-
-      & .button_connectwallet_bottom {
-        display: block;
-        position: fixed;
-        height: 50px;
-        line-height: 50px;
-        right: 0;
-        bottom: 0;
-        left: 0;
-        background-color: var(--foreground-accent-rgb);
-        color: var(--foreground-rgb);
-        font-size: var(--sp-font-size-M);
-        font-weight: 700;
-        z-index: 10;
-        border: 1px solid var(--font-color-gray);
-        opacity: .9;
-      }
-
     }
 
-    & .section {
-      width: 90%;
-      margin: 120px auto 100px;
-      text-align: center;
+    & .header_buttonarea {
+      width: 100vw;
+      height: 45%;
+      position: relative;
 
-
-      & .section_title {
-        font-size: var(--sp-font-size-ML);
-        font-family: var(--font-title);
+      & .header_button {
+        display: inline-block;
+        text-align: center;
+        width: 70%;
+        position: absolute;
+        left: 50%;
+        top: 15%;
+        transform: translateX(-50%);
+        text-decoration: none;
+        color: var(--font-color-base);
+        border: 1px solid var(--font-color-base);
+        border-radius: 50px;
+        font-family: var(--font-accent);
+        font-size: var(--font-size-M);
         font-weight: bold;
+        padding-top: 10px;
+        padding-bottom: 10px;
+        letter-spacing: var(--letter-space);
+        background-color: var(--foreground-accent-rgb);
       }
-
-      & .section_detail {
-        & .section_detail_text {
-          font-family: var(--font-accent);
-          font-size: var(--sp-font-size-S);
-          line-height: 1.5 rem;
-          margin-top: 20px;
-        }
-        & .survice_img {
-          object-fit: contain;
-          width: 100%;
-        }
-
-        // HOW TO ORDER
-        & .order_flow {
-          display: grid;
-          grid-template-columns: 1fr;
-          width: 80%;
-          // margin-top: 30px;
-          margin: 30px auto 0;
-
-
-          & .order_step {
-            & h3 {
-              font-size: var(--sp-font-size-S);
-            }
-
-            & .order_step_name {
-              font-size: var(--sp-font-size-M);
-            }
-
-            & .order_step_detail {
-              margin-top: 10px;
-              font-weight: 400;
-              font-size: var(--sp-font-size-s);
-            }
-
-            & svg {
-              width: 10rem;
-              color: var(--font-color-gray);
-              margin-top: 20px;
-              margin-bottom: 70px;
-            }
-          }
-        }
-
-        // FAQ
-        .accordion {
-          margin: 3em auto;
-          max-width: 90vw;
-        }
-
-        .toggle {
-          display: none;
-        }
-
-        .option {
-          position: relative;
-          margin-bottom: 1em;
-        }
-
-        .title,
-        .content {
-          -webkit-backface-visibility: hidden;
-          backface-visibility: hidden;
-          transform: translateZ(0);
-          transition: all 0.3s;
-        }
-
-        .title {
-          border: solid 1px var(--font-color-base);
-          ;
-          padding: 1em;
-          display: block;
-          color: var(--font-color-base);
-          font-weight: bold;
-          text-align: left;
-        }
-
-        .title::after,
-        .title::before {
-          content: "";
-          position: absolute;
-          right: 1.25em;
-          top: 1.25em;
-          width: 2px;
-          height: 0.75em;
-          background-color: #999;
-          transition: all 0.3s;
-        }
-
-        .title::after {
-          transform: rotate(90deg);
-        }
-
-        .toggle:checked+.title {
-          max-height: 500px;
-          transition: all 0.2s;
-          background-color: var(--foreground-accent-rgb);
-          color: var(--foreground-rgb);
-        }
-
-        .content {
-          max-height: 0;
-          overflow: hidden;
-          color: var(--font-color-base);
-          text-align: left;
-        }
-
-        .content p {
-          margin: 0;
-          padding: 0.5em 1em 1em;
-          font-size: 0.9em;
-          line-height: 1.5;
-        }
-
-        .toggle:checked+.title+.content {
-          max-height: 500px;
-          transition: all 1.5s;
-        }
-
-        .toggle:checked+.title::before {
-          transform: rotate(90deg) !important;
-        }
+      &:before {
+        content: ('＼さっそく注文はこちら！／');
+        font-size: var(--sp-font-size-S);
+        font-weight: bold;
+        position: absolute;
+        left: 50%;
+        transform: translateX(-50%);
+        top: 10%;
       }
-
-
     }
   }
 }

@@ -1,37 +1,34 @@
-@import url('https://fonts.googleapis.com/css2?family=M+PLUS+1+Code:wght@100;200;300;400;500;600;700&display=swap');
-@import url('https://fonts.googleapis.com/css2?family=Tektur:wght@400;500;600;700;800;900&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Dela+Gothic+One&family=Noto+Sans+JP:wght@100..900&display=swap');
 
 :root {
-  /* フォント */
-  --font-mono: ui-monospace, Menlo, Monaco, "Cascadia Mono", "Segoe UI Mono",
-    "Roboto Mono", "Oxygen Mono", "Ubuntu Monospace", "Source Code Pro",
-    "Fira Mono", "Droid Sans Mono", "Courier New", monospace;
-  --font-accent:'M PLUS 1 Code', monospace;
-  --font-title:'Tektur', sans-serif;
+  /* ■フォント■ */
+  /* 基本フォント */
+  --font-mono: "Noto Sans JP", sans-serif;
+  /* タイトル用フォント */
+  --font-accent: "Dela Gothic One", sans-serif;
 
+    /* ■フォントサイズ(DeskTop)■ */
+    --font-size-L: 12rem;
+    --font-size-M: 2.5rem;
+    --font-size-S: 1.5rem;
+    --font-size-XS: 1.0rem;
 
-  /* 文字サイズ */
-  --font-size-L: 12rem;
-  --font-size-M: 2.5rem;
-  --font-size-S: 1.5rem;
-  --font-size-XS: 1.0rem;
-  /* 文字サイズ（sp） */
-  --sp-font-size-L: 5rem;
+    /* ■フォントサイズ(mobile)■ */
+  --sp-font-size-L: 4rem;
   --sp-font-size-ML: 3.0rem;
   --sp-font-size-M: 2.0rem;
   --sp-font-size-S: 0.9rem;
   --sp-font-size-XS: 0.7rem;
 
-  /* 文字間 */
+  /* ■文字間■ */
   --letter-space: .2rem;
 
-  /* 文字色 */
-  --font-color-base: #fdfdfd;
-  --font-color-gray: #AAAAAA;
+  /* ■文字色■ */
+  --font-color-base: #000000;
+  --font-color-gray: #686868;
 
-  /* 背景色 */
-  --foreground-rgb: #212121;
-  --foreground-rgb: #222212;
+  /* ■背景色■ */
+  --foreground-base-rgb: #ffffff;
   --foreground-accent-rgb: #94ff00;
 }
 
@@ -40,13 +37,5 @@ body {
   max-width: 100vw;
   overflow-x: hidden;
   font-family: var(--font-mono);
-}
-
-body {
   background-color: var(--foreground-rgb);
-}
-
-a {
-  color: inherit;
-  text-decoration: none;
 }

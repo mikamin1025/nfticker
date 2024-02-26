@@ -14,7 +14,7 @@
     --font-size-XS: 1.0rem;
 
     /* ■フォントサイズ(mobile)■ */
-  --sp-font-size-L: 4rem;
+  --sp-font-size-L: 3.5rem;
   --sp-font-size-ML: 3.0rem;
   --sp-font-size-M: 2.0rem;
   --sp-font-size-S: 0.9rem;
@@ -22,6 +22,9 @@
 
   /* ■文字間■ */
   --letter-space: .2rem;
+
+  /* ■行高さ■ */
+  --line-height: 1.5rem;
 
   /* ■文字色■ */
   --font-color-base: #000000;
@@ -36,6 +39,7 @@ html,
 body {
   max-width: 100vw;
   overflow-x: hidden;
+  font-weight: bold;
   font-family: var(--font-mono);
   background-color: var(--foreground-rgb);
 }

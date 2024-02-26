@@ -7,17 +7,30 @@ import styles from "./page.module.scss";
 export default function Home() {
   return (
     <>
-      <header>
+      <header className={styles.header}>
         <div className={styles.header_block}>
           <div className={styles.header_titlearea}>
             <h1 className={styles.header_title}>{`NFT\nTO\nSTICKER`}</h1>
+            <Image src="/image/survice_img.png"  height={267} width={730} alt="" className={styles.header_img}/>
           </div>
           <div className={styles.header_buttonarea}>
             <Link className={styles.header_button} href="/">ORDER</Link>
           </div>
         </div>
       </header>
-      <main></main>
+      <main className={styles.main}>
+        <section className={styles.section}>
+          <h2 className={styles.section_title}>SURVICE</h2>
+          <ul className={styles.senction_ulist}>
+            <li className={styles.section_ulist_li}>ウォレットアドレスに所有するNFT画像を「ステッカー」にするサービスです。</li>
+            <li className={styles.section_ulist_li}>自身のアイデンティティとも言えるPFP（プロフィール画像）をデジタルから現実世界へ！</li>
+            <li className={styles.section_ulist_li}>オフ会などのイベントでスマホやパソコンに貼ってさりげなくアピールしちゃおう！</li>
+          </ul>
+        </section>
+        
+        
+        
+      </main>
     </>
 
     // <main className={styles.main}>

@@ -205,7 +205,7 @@
         color: var(--font-color-base);
         font-family: var(--font-accent);
         font-size: var(--font-size-M);
-        text-decoration: solid underline var(--foreground-accent-rgb) 5px;
+        text-decoration: solid underline var(--foreground-accent-rgb);
 
         &:after {
           content: '注文方法';
@@ -220,7 +220,7 @@
       }
 
       & .section_how_stepblock {
-        margin-top: 40px;
+        margin-top: 50px;
 
 
         & .section_how_steptitle {
@@ -262,7 +262,7 @@
           max-width: 100%;
           max-height: 200px;
           object-fit: contain;
-          margin-top: 20px;
+          margin-top: 15px;
         }
 
 

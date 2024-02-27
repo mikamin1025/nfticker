@@ -52,7 +52,9 @@
             left: 0;
             top: -8%;
             font-weight: normal;
-          }&:after {
+          }
+
+          &:after {
             content: 'ステッカーにするサービスです';
             position: absolute;
             font-size: var(--sp-font-size-S);
@@ -116,13 +118,15 @@
 
     & .section {
       text-align: center;
+      margin-bottom: 100px;
 
-      & .section_title {
+      // SECTION-SURVICE
+      & .section_survice_title {
         position: relative;
         color: var(--font-color-base);
         font-family: var(--font-accent);
         font-size: var(--font-size-M);
-        text-decoration: solid underline var(--foreground-accent-rgb) 8px;
+        text-decoration: solid underline var(--foreground-accent-rgb) 5px;
 
         &:after {
           content: 'サービス内容';
@@ -130,25 +134,140 @@
           font-size: var(--sp-font-size-S);
           color: var(--font-color-gray);
           left: 50%;
-          top: 130%;
+          top: 110%;
           transform: translateX(-50%);
           font-weight: normal;
         }
       }
 
-      & .senction_ulist {
+      & .senction_survice_ulist {
         list-style: square;
-        list-style-position:inside;
+        list-style-position: inside;
         text-align: left;
         line-height: var(--line-height);
         font-size: var(--sp-font-size-S);
         margin-top: 50px;
 
-        & .section_ulist_li {
+        & .section_survice_ulist_li {
           margin-top: 15px;
           font-weight: 600;
         }
       }
+
+      // SECTION-PRICE
+      & .section_price_title {
+        position: relative;
+        color: var(--font-color-base);
+        font-family: var(--font-accent);
+        font-size: var(--font-size-M);
+        text-decoration: solid underline var(--foreground-accent-rgb) 5px;
+
+        &:after {
+          content: '値段';
+          position: absolute;
+          font-size: var(--sp-font-size-S);
+          color: var(--font-color-gray);
+          left: 50%;
+          top: 110%;
+          transform: translateX(-50%);
+          font-weight: normal;
+        }
+      }
+
+      & .section_price_big {
+        margin-top: 40px;
+        font-size: 5rem;
+        font-weight: 900;
+
+        & span {
+          font-size: 3rem;
+        }
+      }
+
+      & .senction_price_ulist {
+        list-style: square;
+        list-style-position: inside;
+        text-align: left;
+        line-height: var(--line-height);
+        font-size: var(--sp-font-size-S);
+        margin-top: 20px;
+
+        & .section_price_ulist_li {
+          margin-top: 15px;
+          font-weight: 600;
+          color: var(--font-color-gray);
+        }
+      }
+
+      // SECTION-HOW TO ORDER
+      & .section_how_title {
+        position: relative;
+        color: var(--font-color-base);
+        font-family: var(--font-accent);
+        font-size: var(--font-size-M);
+        text-decoration: solid underline var(--foreground-accent-rgb) 5px;
+
+        &:after {
+          content: '注文方法';
+          position: absolute;
+          font-size: var(--sp-font-size-S);
+          color: var(--font-color-gray);
+          left: 50%;
+          top: 110%;
+          transform: translateX(-50%);
+          font-weight: normal;
+        }
+      }
+
+      & .section_how_stepblock {
+        margin-top: 40px;
+
+
+        & .section_how_steptitle {
+          display: flex;
+
+          & .section_how_stepnumber {
+            display: block;
+            margin-right: 20px;
+
+            & .section_how_number {
+              font-size: var(--sp-font-size-M);
+              font-weight: 900;
+            }
+          }
+
+          & .section_how_text {
+            align-self: center;
+            text-align: left;
+          }
+        }
+        & .section_how_img1 {
+          max-width: 100%;
+          max-height: 100px;
+          object-fit: contain;
+        }
+        & .section_how_img2 {
+          max-width: 100%;
+          max-height: 200px;
+          object-fit: contain;
+          margin-top: 25px;
+        }
+        & .section_how_img3 {
+          max-width: 100%;
+          max-height: 300px;
+          object-fit: contain;
+          margin-top: 25px;
+        }
+        & .section_how_img4 {
+          max-width: 100%;
+          max-height: 200px;
+          object-fit: contain;
+          margin-top: 20px;
+        }
+
+
+      }
+
     }
 
 

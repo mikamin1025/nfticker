@@ -11,25 +11,129 @@ export default function Home() {
         <div className={styles.header_block}>
           <div className={styles.header_titlearea}>
             <h1 className={styles.header_title}>{`NFT\nTO\nSTICKER`}</h1>
-            <Image src="/image/survice_img.png"  height={267} width={730} alt="" className={styles.header_img}/>
+            <Image
+              src="/image/survice_img.png"
+              height={267}
+              width={730}
+              alt=""
+              className={styles.header_img}
+            />
           </div>
           <div className={styles.header_buttonarea}>
-            <Link className={styles.header_button} href="/">ORDER</Link>
+            <Link className={styles.header_button} href="/">
+              ORDER
+            </Link>
           </div>
         </div>
       </header>
       <main className={styles.main}>
+        {/* SECTION-SURVICE */}
         <section className={styles.section}>
-          <h2 className={styles.section_title}>SURVICE</h2>
-          <ul className={styles.senction_ulist}>
-            <li className={styles.section_ulist_li}>ウォレットアドレスに所有するNFT画像を「ステッカー」にするサービスです。</li>
-            <li className={styles.section_ulist_li}>自身のアイデンティティとも言えるPFP（プロフィール画像）をデジタルから現実世界へ！</li>
-            <li className={styles.section_ulist_li}>オフ会などのイベントでスマホやパソコンに貼ってさりげなくアピールしちゃおう！</li>
+          <h2 className={styles.section_survice_title}>SURVICE</h2>
+          <ul className={styles.senction_survice_ulist}>
+            <li className={styles.section_survice_ulist_li}>
+              ウォレットアドレスに所有するNFT画像を「ステッカー」にするサービスです。
+            </li>
+            <li className={styles.section_survice_ulist_li}>
+              自身のアイデンティティとも言えるPFP（プロフィール画像）をデジタルから現実世界へ！
+            </li>
+            <li className={styles.section_survice_ulist_li}>
+              オフ会などのイベントでスマホやパソコンに貼ってさりげなくアピールしちゃおう！
+            </li>
           </ul>
         </section>
-        
-        
-        
+        {/* SECTION-PRICE */}
+        <section className={styles.section}>
+          <h2 className={styles.section_price_title}>PRICE</h2>
+          <p className={styles.section_price_big}>
+            &yen;500/<span>枚</span>
+          </p>
+          <ul className={styles.senction_price_ulist}>
+            <li className={styles.section_price_ulist_li}>
+              支払い金額は&yen;500×注文数 となります。
+            </li>
+          </ul>
+        </section>
+        {/* SECTION-HOW TO ORDER */}
+        <section className={styles.section}>
+          <h2 className={styles.section_how_title}>HOW TO ORDER</h2>
+          {/* STEP1 */}
+          <div className={styles.section_how_stepblock}>
+            <div className={styles.section_how_steptitle}>
+              <div className={styles.section_how_stepnumber}>
+                <p className={styles.section_how_number}>01</p>
+                <p className={styles.section_how_step}>STEP</p>
+              </div>
+              <p className={styles.section_how_text}>
+                ウォレットアドレスを入力する
+              </p>
+            </div>
+            <Image
+              src="/image/STEP1.JPG"
+              height={160}
+              width={916}
+              alt="メタマスクのウォレットアドレスを入力"
+              className={styles.section_how_img1}
+            />
+          </div>
+          {/* STEP2 */}
+          <div className={styles.section_how_stepblock}>
+            <div className={styles.section_how_steptitle}>
+              <div className={styles.section_how_stepnumber}>
+                <p className={styles.section_how_number}>02</p>
+                <p className={styles.section_how_step}>STEP</p>
+              </div>
+              <p className={styles.section_how_text}>
+                ウォレットに紐づくNFT画像を一覧表示する
+              </p>
+            </div>
+            <Image
+              src="/image/STEP2.JPG"
+              height={531}
+              width={821}
+              alt="NFT画像を一覧表示する"
+              className={styles.section_how_img2}
+            />
+          </div>
+          {/* STEP3 */}
+          <div className={styles.section_how_stepblock}>
+            <div className={styles.section_how_steptitle}>
+              <div className={styles.section_how_stepnumber}>
+                <p className={styles.section_how_number}>03</p>
+                <p className={styles.section_how_step}>STEP</p>
+              </div>
+              <p className={styles.section_how_text}>
+                カートに追加＆注文内容を確認する
+              </p>
+            </div>
+            <Image
+              src="/image/STEP3.JPG"
+              height={492}
+              width={414}
+              alt="カートに追加＆注文内容を確認する"
+              className={styles.section_how_img3}
+            />
+          </div>
+          {/* STEP4 */}
+          <div className={styles.section_how_stepblock}>
+            <div className={styles.section_how_steptitle}>
+              <div className={styles.section_how_stepnumber}>
+                <p className={styles.section_how_number}>04</p>
+                <p className={styles.section_how_step}>STEP</p>
+              </div>
+              <p className={styles.section_how_text}>
+                クレジットカードで決済する
+              </p>
+            </div>
+            <Image
+              src="/image/STEP4.JPG"
+              height={275}
+              width={476}
+              alt="クレジットカードで決済する"
+              className={styles.section_how_img4}
+            />
+          </div>
+        </section>
       </main>
     </>
 

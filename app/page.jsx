@@ -10,7 +10,7 @@ export default function Home() {
       <header className={styles.header}>
         <div className={styles.header_block}>
           <div className={styles.header_titlearea}>
-            <h1 className={styles.header_title}>{`NFT\nTO\nSTICKER`}</h1>
+            <h1 className={styles.header_title}>{`NFT\nTO\nステッカー`}</h1>
             <Image
               src="/image/survice_img.png"
               height={267}

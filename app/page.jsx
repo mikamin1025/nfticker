@@ -9,15 +9,17 @@ export default function Home() {
     <>
       <header className={styles.header}>
         <div className={styles.header_block}>
-          <div className={styles.header_titlearea}>
-            <h1 className={styles.header_title}>{`NFT\nTO\nステッカー`}</h1>
-            <Image
-              src="/image/survice_img.png"
-              height={267}
-              width={730}
-              alt=""
-              className={styles.header_img}
-            />
+          <div className={styles.header_surface}>
+            <div className={styles.header_titlearea}>
+              <h1 className={styles.header_title}>{`NFT\nを\nステッカー\nに！！`}</h1>
+              <Image
+                src="/image/survice_img.png"
+                height={267}
+                width={730}
+                alt=""
+                className={styles.header_img}
+              />
+            </div>
           </div>
           <div className={styles.header_buttonarea}>
             <Link className={styles.header_button} href="/">

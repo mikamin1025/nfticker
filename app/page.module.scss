@@ -23,68 +23,77 @@
   .header {
     .header_block {
       height: 100vh;
+      position: relative;
 
-      & .header_titlearea {
-        width: 100%;
-        height: 70%;
-        background-color: var(--foreground-accent-rgb);
-        display: flex;
-        flex-direction: column;
-        align-items: center;
-        border: 10px solid #fff;
+      & .header_surface {
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 99%;
+        height: 99%;
+        background-color: #fff;
+        margin: 0 auto;
+        border: 1px solid var(--font-color-base);
 
-
-        & .header_title {
-          position: relative;
-          flex: 2;
-          display: inline-block;
-          width: 90%;
-          font-family: var(--font-accent);
-          font-size: var(--sp-font-size-L);
-          white-space: pre-wrap;
-          line-height: 5rem;
-          margin-top: 70px;
-
-          &:before {
-            content: 'ウォレットにあるNFT画像を';
-            position: absolute;
-            font-size: var(--sp-font-size-S);
-            color: var(--font-color-base);
-            left: 0;
-            top: -8%;
-            font-weight: normal;
+        & .header_titlearea {
+          position: absolute;
+          width: calc(100vw - 20px);
+          height: calc(100vh - 20px);
+          top: 10px;
+          left: 50%;
+          transform: translateX(-50%);
+          // transform: translateY(-50%);
+          background-color: var(--foreground-accent-rgb);
+          display: flex;
+          flex-direction: column;
+          align-items: center;
+          border: 1px solid var(--font-color-base);
+  
+  
+          & .header_title {
+            position: relative;
+            flex: 2;
+            display: inline-block;
+            width: 90%;
+            font-family: var(--font-accent);
+            font-size: var(--sp-font-size-L);
+            white-space: pre-wrap;
+            line-height: 5rem;
+            margin-top: 70px;
+  
+            &:before {
+              content: 'ウォレットにあるNFT画像をステッカーにする!';
+              position: absolute;
+              font-size: var(--sp-font-size-S);
+              color: var(--font-color-base);
+              left: 0;
+              top: -8%;
+              font-weight: normal;
+            }
           }
-
-          &:after {
-            content: 'ステッカーにするサービスです';
-            position: absolute;
-            font-size: var(--sp-font-size-S);
-            color: var(--font-color-base);
-            right: 5%;
-            top: 38%;
-            font-weight: normal;
+  
+          & .header_img {
+            flex: 1;
+            width: 90%;
+            object-fit: contain;
           }
-        }
-
-        & .header_img {
-          flex: 1;
-          width: 90%;
-          object-fit: contain;
         }
       }
+      
 
       & .header_buttonarea {
         width: 100vw;
-        height: 40%;
+        height: 100vh;
         position: relative;
 
         & .header_button {
           display: inline-block;
           text-align: center;
-          width: 70%;
+          width: 75%;
+          height: 50px;
           position: absolute;
           left: 50%;
-          top: 15%;
+          top: 60%;
           transform: translateX(-50%);
           text-decoration: none;
           color: var(--font-color-base);
@@ -106,7 +115,7 @@
           position: absolute;
           left: 50%;
           transform: translateX(-50%);
-          top: 10%;
+          top: 57%;
         }
       }
     }
@@ -115,7 +124,7 @@
   // メイン部
   .main {
     width: 90%;
-    margin: 0 auto;
+    margin: 100px auto;
 
     & .section {
       text-align: center;
@@ -302,7 +311,7 @@
 
       .section_faq_accordion {
         margin: 3em auto;
-        max-width: 80vw;
+        max-width: 90vw;
       }
 
       .toggle {
@@ -319,7 +328,7 @@
         -webkit-backface-visibility: hidden;
         backface-visibility: hidden;
         transform: translateZ(0);
-        transition: all 0.1s;
+        transition: all 0.3s;
       }
 
       .title {
@@ -340,7 +349,7 @@
         width: 2px;
         height: 0.75em;
         background-color: #999;
-        transition: all 0.1s;
+        transition: all 0.3s;
       }
 
       .title::after {

@@ -135,7 +135,7 @@ export default function Home() {
           </div>
         </section>
         {/* SECTION-FAQ */}
-        <seciton className={styles.section}>
+        <seciton className={styles.section_faq}>
           <h2 className={styles.section_faq_title}>FAQ</h2>
 
           <div className={styles.section_faq_accordion}>

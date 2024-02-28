@@ -113,7 +113,7 @@
 
   // メイン部
   .main {
-    width: 90%;
+    width: 80%;
     margin: 0 auto;
 
     & .section {
@@ -271,9 +271,12 @@
           object-fit: contain;
           margin-top: 15px;
         }
-
-
       }
+    }
+
+    & .section_faq {
+      text-align: center;
+      margin-bottom: 100px;
 
       // SECTION-FAQ
       & .section_faq_title {
@@ -294,6 +297,7 @@
           font-weight: normal;
         }
       }
+
       .section_faq_accordion {
         margin: 3em auto;
         max-width: 80vw;
@@ -370,7 +374,6 @@
       .toggle:checked+.title::before {
         transform: rotate(90deg) !important;
       }
-
     }
 
 

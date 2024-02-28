@@ -28,12 +28,14 @@
       & .header_surface {
         position: absolute;
         top: 0;
-        left: 0;
-        width: 99%;
-        height: 99%;
+        left: 50%;
+        transform: translateX(-50%);
+        width: 98%;
+        height: 100%;
         background-color: #fff;
         margin: 0 auto;
         border: 1px solid var(--font-color-base);
+        filter: drop-shadow(5px 5px 10px #aaa);
 
         & .header_titlearea {
           position: absolute;

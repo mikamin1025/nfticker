@@ -134,6 +134,118 @@ export default function Home() {
             />
           </div>
         </section>
+        {/* SECTION-FAQ */}
+        <seciton className={styles.section}>
+          <h2 className={styles.section_faq_title}>FAQ</h2>
+
+          <div className={styles.section_faq_accordion}>
+            <div className={styles.option}>
+              <input
+                type="checkbox"
+                id="toggle1"
+                className={styles.toggle}
+              ></input>
+              <label className={styles.title} htmlFor="toggle1">
+                Ｑ．費用はどれくらいですか？
+              </label>
+              <div className={styles.content}>
+                <p>
+                  テキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキスト
+                </p>
+              </div>
+            </div>
+            <div className={styles.option}>
+              <input
+                type="checkbox"
+                id="toggle2"
+                className={styles.toggle}
+              ></input>
+              <label className={styles.title} htmlFor="toggle2">
+                Ｑ．ステッカーの配送方法は？
+              </label>
+              <div className={styles.content}>
+                <p>
+                  テキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキスト
+                </p>
+              </div>
+            </div>
+            <div className={styles.option}>
+              <input
+                type="checkbox"
+                id="toggle3"
+                className={styles.toggle}
+              ></input>
+              <label className={styles.title} htmlFor="toggle3">
+                Ｑ．注文から納品までどれくらいの期間がかかりますか？
+              </label>
+              <div className={styles.content}>
+                <p>
+                  テキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキスト
+                </p>
+              </div>
+            </div>
+            <div className={styles.option}>
+              <input
+                type="checkbox"
+                id="toggle4"
+                className={styles.toggle}
+              ></input>
+              <label className={styles.title} htmlFor="toggle4">
+                Ｑ．WalletはMetaMask（メタマスク）のみですか？
+              </label>
+              <div className={styles.content}>
+                <p>
+                  現在のところはMetaMaskのみの対応としております。今後の状況を踏まえ、対応範囲を拡充していく予定です。
+                </p>
+              </div>
+            </div>
+            <div className={styles.option}>
+              <input
+                type="checkbox"
+                id="toggle5"
+                className={styles.toggle}
+              ></input>
+              <label className={styles.title} htmlFor="toggle5">
+                Ｑ．自分が所有するNFT以外を注文する方法はありますか？
+              </label>
+              <div className={styles.content}>
+                <p>
+                  『自分が所有している』ことが重要と考えており、所有する画像以外は注文できないようにしておりますのでご了承ください。
+                </p>
+              </div>
+            </div>
+            <div className={styles.option}>
+              <input
+                type="checkbox"
+                id="toggle6"
+                className={styles.toggle}
+              ></input>
+              <label className={styles.title} htmlFor="toggle6">
+                Ｑ．ギフト包装は対応できますか？
+              </label>
+              <div className={styles.content}>
+                <p>
+                  ご自分用の購入を想定しており、現在のところはギフト対応は行っておりません。
+                </p>
+              </div>
+            </div>
+            <div className={styles.option}>
+              <input
+                type="checkbox"
+                id="toggle7"
+                className={styles.toggle}
+              ></input>
+              <label className={styles.title} htmlFor="toggle7">
+                Ｑ．注文後のキャンセル方法は？
+              </label>
+              <div className={styles.content}>
+                <p>
+                  受注生産となりますので、注文後のキャンセルに対応することはできません。注文確定前にしっかりと内容を確認の上、注文いただきますようお願いします。
+                </p>
+              </div>
+            </div>
+          </div>
+        </seciton>
       </main>
     </>
 

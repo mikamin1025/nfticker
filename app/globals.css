@@ -32,6 +32,7 @@
 
   /* ■背景色■ */
   --foreground-base-rgb: #ffffff;
+  --foreground-section-rgb: #f8f8d8;
   --foreground-accent-rgb: #94ff00;
 }
 

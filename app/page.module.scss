@@ -18,7 +18,7 @@
 
 /* Mobile */
 @media (max-width: 700px) {
-
+  
   // ヘッダー部
   .header {
     .header_block {
@@ -31,11 +31,12 @@
         left: 50%;
         transform: translateX(-50%);
         width: 98%;
-        height: 70%;
+        height: 100%;
         background-color: #fff;
         margin: 0 auto;
         border: 1px solid var(--font-color-base);
-        filter: drop-shadow(5px 5px 10px #aaa);
+        // filter: drop-shadow(5px 5px 10px #aaa);
+        border-radius: 20px;
 
         & .header_titlearea {
           position: absolute;
@@ -50,35 +51,34 @@
           flex-direction: column;
           align-items: center;
           border: 1px solid var(--font-color-base);
-  
+          border-radius: 20px;
   
           & .header_title {
-            position: relative;
-            flex: 2;
-            display: inline-block;
+            // position: relative;
+            // flex: 2;
+            display: block;
             width: 90%;
             font-family: var(--font-accent);
             font-size: var(--sp-font-size-L);
             white-space: pre-wrap;
             line-height: 5rem;
             margin-top: 70px;
-  
-            &:before {
-              content: 'ウォレットにあるNFT画像をステッカーにする!';
-              position: absolute;
-              font-size: var(--sp-font-size-S);
-              color: var(--font-color-base);
-              left: 0;
-              top: -8%;
-              font-weight: normal;
-            }
           }
-  
-          & .header_img {
-            flex: 1;
+          & .header_text {
+            display: block;
             width: 90%;
-            object-fit: contain;
+            text-align: left;
+            font-family: var(--font-accent);
+            font-size: var(--sp-font-size-M);
+            font-weight: 200;
           }
+
+  
+          // & .header_img {
+          //   flex: 1;
+          //   width: 90%;
+          //   object-fit: contain;
+          // }
         }
       }
       
@@ -95,7 +95,7 @@
           height: 50px;
           position: absolute;
           left: 50%;
-          top: 80%;
+          top: 70%;
           transform: translateX(-50%);
           text-decoration: none;
           color: var(--font-color-base);
@@ -117,7 +117,7 @@
           position: absolute;
           left: 50%;
           transform: translateX(-50%);
-          top: 77%;
+          top: 67%;
         }
       }
     }
@@ -127,14 +127,15 @@
   .main {
     width: 90%;
     margin: 100px auto;
+    
 
     & .section {
       text-align: center;
       margin-bottom: 60px;
-      background-color: var(--foreground-section-rgb);
+      // background-color: var(--foreground-section-rgb);
       padding: 50px 40px;
-      border-radius: 50px 0 50px 0;
-      border: 1px solid var(--font-color-base);
+      // border-radius: 50px 0 50px 0;
+      // border: 1px solid var(--font-color-base);
 
       // SECTION-SURVICE
       & .section_survice_title {

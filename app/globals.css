@@ -42,5 +42,5 @@ body {
   overflow-x: hidden;
   font-weight: bold;
   font-family: var(--font-mono);
-  background-color: var(--foreground-rgb);
+  background-color: var(--foreground-base-rgb);
 }

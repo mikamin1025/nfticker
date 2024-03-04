@@ -11,14 +11,15 @@ export default function Home() {
         <div className={styles.header_block}>
           <div className={styles.header_surface}>
             <div className={styles.header_titlearea}>
-              <h1 className={styles.header_title}>{`NFT\nを\nステッカー\nに！！`}</h1>
-              <Image
+              <h1 className={styles.header_title}>{`NFT\n↓↓\nSTICKER`}</h1>
+              <p className={styles.header_text}>NFTをステッカーにするサービス</p>
+              {/* <Image
                 src="/image/survice_img.png"
                 height={267}
                 width={730}
                 alt=""
                 className={styles.header_img}
-              />
+              /> */}
             </div>
           </div>
           <div className={styles.header_buttonarea}>

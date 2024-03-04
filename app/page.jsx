@@ -55,6 +55,9 @@ export default function Home() {
             <li className={styles.section_price_ulist_li}>
               支払い金額は&yen;500×注文数 となります。
             </li>
+            <li className={styles.section_price_ulist_li}>
+              上記は送料込みの金額です。
+            </li>
           </ul>
         </section>
         {/* SECTION-HOW TO ORDER */}
@@ -64,8 +67,8 @@ export default function Home() {
           <div className={styles.section_how_stepblock}>
             <div className={styles.section_how_steptitle}>
               <div className={styles.section_how_stepnumber}>
-                <p className={styles.section_how_number}>01</p>
                 <p className={styles.section_how_step}>STEP</p>
+                <p className={styles.section_how_number}>01</p>
               </div>
               <p className={styles.section_how_text}>
                 ウォレットアドレスを入力する
@@ -83,8 +86,8 @@ export default function Home() {
           <div className={styles.section_how_stepblock}>
             <div className={styles.section_how_steptitle}>
               <div className={styles.section_how_stepnumber}>
-                <p className={styles.section_how_number}>02</p>
                 <p className={styles.section_how_step}>STEP</p>
+                <p className={styles.section_how_number}>02</p>
               </div>
               <p className={styles.section_how_text}>
                 ウォレットに紐づくNFT画像を一覧表示する
@@ -102,8 +105,8 @@ export default function Home() {
           <div className={styles.section_how_stepblock}>
             <div className={styles.section_how_steptitle}>
               <div className={styles.section_how_stepnumber}>
-                <p className={styles.section_how_number}>03</p>
                 <p className={styles.section_how_step}>STEP</p>
+                <p className={styles.section_how_number}>03</p>
               </div>
               <p className={styles.section_how_text}>
                 カートに追加＆注文内容を確認する
@@ -121,8 +124,8 @@ export default function Home() {
           <div className={styles.section_how_stepblock}>
             <div className={styles.section_how_steptitle}>
               <div className={styles.section_how_stepnumber}>
-                <p className={styles.section_how_number}>04</p>
                 <p className={styles.section_how_step}>STEP</p>
+                <p className={styles.section_how_number}>04</p>
               </div>
               <p className={styles.section_how_text}>
                 クレジットカードで決済する

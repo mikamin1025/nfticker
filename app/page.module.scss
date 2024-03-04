@@ -125,25 +125,30 @@
 
   // メイン部
   .main {
-    width: 90%;
+    width: 80%;
     margin: 100px auto;
     
 
     & .section {
       text-align: center;
-      margin-bottom: 60px;
+      margin-bottom: 120px;
+      
       // background-color: var(--foreground-section-rgb);
-      padding: 50px 40px;
+      // padding: 50px 40px;
       // border-radius: 50px 0 50px 0;
       // border: 1px solid var(--font-color-base);
 
       // SECTION-SURVICE
       & .section_survice_title {
         position: relative;
-        color: var(--font-color-base);
+        background-color: var(--font-color-base);
+        // color: var(--font-color-base);
+        color: #fff;
+        padding: 5px 20px;
+        text-align: center;
+        border-radius: 20px;
         font-family: var(--font-accent);
         font-size: var(--font-size-M);
-        text-decoration: solid underline var(--foreground-accent-rgb);
 
         &:after {
           content: 'サービス内容';
@@ -174,10 +179,14 @@
       // SECTION-PRICE
       & .section_price_title {
         position: relative;
-        color: var(--font-color-base);
+        background-color: var(--font-color-base);
+        // color: var(--font-color-base);
+        color: #fff;
+        padding: 5px 20px;
+        text-align: center;
+        border-radius: 20px;
         font-family: var(--font-accent);
         font-size: var(--font-size-M);
-        text-decoration: solid underline var(--foreground-accent-rgb);
 
         &:after {
           content: '値段';
@@ -212,17 +221,21 @@
         & .section_price_ulist_li {
           margin-top: 15px;
           font-weight: 600;
-          color: var(--font-color-gray);
+          // color: var(--font-color-gray);
         }
       }
 
       // SECTION-HOW TO ORDER
       & .section_how_title {
         position: relative;
-        color: var(--font-color-base);
+        background-color: var(--font-color-base);
+        // color: var(--font-color-base);
+        color: #fff;
+        padding: 5px 20px;
+        text-align: center;
+        border-radius: 20px;
         font-family: var(--font-accent);
         font-size: var(--font-size-M);
-        text-decoration: solid underline var(--foreground-accent-rgb);
 
         &:after {
           content: '注文方法';
@@ -242,10 +255,15 @@
 
         & .section_how_steptitle {
           display: flex;
+          border-bottom: 1px solid var(--font-color-base);
+          border-left: 1px solid var(--font-color-base);
 
           & .section_how_stepnumber {
             display: block;
             margin-right: 20px;
+            padding: 3px;
+            border-radius: 0 8px 0 0;
+            background-color: var(--foreground-accent-rgb);
 
             & .section_how_number {
               font-size: var(--sp-font-size-M);
@@ -295,10 +313,14 @@
       // SECTION-FAQ
       & .section_faq_title {
         position: relative;
-        color: var(--font-color-base);
+        background-color: var(--font-color-base);
+        // color: var(--font-color-base);
+        color: #fff;
+        padding: 5px 20px;
+        text-align: center;
+        border-radius: 20px;
         font-family: var(--font-accent);
         font-size: var(--font-size-M);
-        text-decoration: solid underline var(--foreground-accent-rgb);
 
         &:after {
           content: 'よくある質問';
